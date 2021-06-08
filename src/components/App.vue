@@ -7,8 +7,16 @@
 </template>
 
 <script>
+    import itemList from './subComponents/itemList.vue'
     export default{
-        
+        data(){
+            return {
+
+            }
+        },
+        components: {
+            itemList
+        }
     }
 </script>
 

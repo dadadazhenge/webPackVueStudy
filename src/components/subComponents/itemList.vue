@@ -9,6 +9,7 @@
                     <span>{{ dataArry.name }}</span>
                 </item>
             </li>
+        </ul>
     </div>
 </template>
 
