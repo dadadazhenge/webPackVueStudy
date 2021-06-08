@@ -7,36 +7,33 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 import App from './components/App.vue';
-import login from './components/subComponents/login.vue';
-import registry from './components/subComponents/registry.vue';
-import name from './components/subComponents/name.vue';
-import age from './components/subComponents/age.vue';
 
-
-
-var router=new VueRouter({
-    routes: [
-        {   
-            path: '/login', 
-            component: login, 
-            children: [
-                { path: 'name', component: name },
-                { path: 'age', component: age },
-            ]
-        },
-        {path: '/registry', component: registry},
-    ]
-})
+// import login from './components/subComponents/login.vue';
+// import registry from './components/subComponents/registry.vue';
+// import name from './components/subComponents/name.vue';
+// import age from './components/subComponents/age.vue';
+// var router=new VueRouter({
+//     routes: [
+//         {   
+//             path: '/login', 
+//             component: login, 
+//             children: [
+//                 { path: 'name', component: name },
+//                 { path: 'age', component: age },
+//             ]
+//         },
+//         {path: '/registry', component: registry},
+//     ]
+// })
 
 $(function(){
     var vm=new Vue({
         el: '#app',
         data:{
-
+            
         },
-        router,
-        render: function (c){
-            return c(App);
-        }
+        // router,
+        render: (c)=> c(App),
+        
     })
 })
