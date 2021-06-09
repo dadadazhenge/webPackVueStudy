@@ -11,7 +11,7 @@ export default {
     ],
     methods: {
         handleClick(){
-            this.$emit("active",123)
+            this.$emit("active")
         }
     }
 }

@@ -1,12 +1,12 @@
 <template>
     <div>
         <ul style="list-style: none">
-            <li style="width: 180px; height: 35px">
-                <item :isActive="curActive==='xianhuoping'" @active="curActive='xianhuoping'">
+            <li style="width: 180px; height: 35px" v-for="item in dataArry" :key="item.id">
+                <item :isActive="activeId===item.id" @active="$emit('active',item.id)">
                     <span>
-                        <img :src="dataArry.src" alt="">
+                        <img :src="item.src" alt="">
                     </span>
-                    <span>{{ dataArry.name }}</span>
+                    <span>{{ item.name }}</span>
                 </item>
             </li>
         </ul>
@@ -14,28 +14,31 @@
 </template>
 
 <script>
-import item from './itemList.vue';
+import item from './item.vue';
 
 export default {
     data(){
         return {
-            curActive: 'xianhuoping'
+            
         }
     },
     components: {
         item
     },
-    props: {
-        dataArry: {
-            type: Object,
-            default: function(){
-                return {};
-            }
-        }
+    props: 
+        {   
+            dataArry: Array,
+            activeId: String,       
+        },
+    methods: {
+        
     }
 }
 </script>
 
 <style>
-    
+    *{
+        margin: 0;
+        padding: 0;
+    };
 </style>
