@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>这里是age组件</h1>
+        <div class="ageBox">我叫李祺祯</div>
     </div>
 </template>
 
@@ -11,5 +11,9 @@ export default {
 </script>
 
 <style scoped>
-
+    .ageBox{
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+    }
 </style>

@@ -31,7 +31,6 @@ export default {
         font-size: 14px;
         line-height: 35px;
         color: white;
-        padding-left: 40px;
         position: relative;
         transition: all 0.2s;
     }

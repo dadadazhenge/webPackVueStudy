@@ -1,12 +1,12 @@
 <template>
     <div>
-        <ul style="list-style: none">
-            <li style="width: 180px; height: 35px" v-for="item in dataArry" :key="item.id">
+        <ul style="list-style: none" class="dataUl">
+            <li class="dataList" :style="{width: `${100/column}%`}" v-for="item in dataArry" :key="item.id">
                 <item :isActive="activeId===item.id" @active="$emit('active',item.id)">
                     <span>
                         <img :src="item.src" alt="">
                     </span>
-                    <span>{{ item.name }}</span>
+                    <span class="dataSpan">{{ item.name }}</span>
                 </item>
             </li>
         </ul>
@@ -28,7 +28,8 @@ export default {
     props: 
         {   
             dataArry: Array,
-            activeId: String,       
+            activeId: String, 
+            column: Number      
         },
     methods: {
         
@@ -36,9 +37,18 @@ export default {
 }
 </script>
 
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-    };
+<style scoped>
+    .dataUl{
+       overflow: hidden;
+    }
+
+
+    .dataList{
+        float: left;
+        height: 35px;
+    }
+
+    .dataSpan{
+        margin-left: 40px;
+    }
 </style>
